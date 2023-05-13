@@ -10,18 +10,6 @@
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-  <!--   Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again -->
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
       font-size: 11px;
@@ -50,7 +38,7 @@
     </header>
 
     <!-- bet -->
-
+<div class="gameField">
     <section id="betTab" class="tabContent">
       <div class="betButtons">
         <button class="betBtn paper tablinks" id="paper" value="0" onclick="playBet(event,'paper')"></button>
@@ -64,17 +52,25 @@
     <!-- compairing bets and result -->
     <section id="resultTab" class="tabContent">
       <div class="betArea" id="betArea">
-        <button class="betBtnplace tablinks" id="myBetPlace"></button>
-        <button class="betBtnplace tablinks" id="houseBetPlace"></button>
+        <div class="selectedBet">
+          <button class="betBtnplace tablinks" id="myBetPlace"></button>
+          <p>you picked</p>
+        </div>
+        <div class="selectedBet">
+          <button class="betBtnplace tablinks textTransf" id="houseBetPlace"></button>
+        <p>the house picked</p>
+        </div>
       </div>
       <div id="replay">
         <div id="result"></div>
         <div id="restartBtn" onclick="replay()">play again</div>
       </div>
     </section>
-    <section id="rules">
-      <button id="rulesBtn">Rules</button>
-    </section>
+    <!-- rules -->
+  </div>
+  <section id="rules">
+    <button id="rulesBtn">Rules</button>
+  </section>
   </main>
 
   <footer class="attribution">

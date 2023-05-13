@@ -6,21 +6,28 @@
     box-sizing: border-box;
 }
 body {
-    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-image: linear-gradient(to bottom,  hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     background-repeat: no-repeat;
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 16px;
+    display: grid;
+    place-content: center;
 }
 main {
+    width: 375px;
     display: grid;
     align-content: start;
     gap: 7rem;
     padding: 2rem;
 }
+.gameField{
+    /* display: grid; */
+    
+}
 /* header with title and score */
 header {
     padding: 0.7rem;
-    border: 2px solid hsl(217, 16%, 45%);
+    border: 3px solid hsl(217, 16%, 45%);
     border-radius: 4px;
     display: grid;
     grid-auto-flow: column;
@@ -56,21 +63,38 @@ header h2 {
     color: hsl(229, 25%, 31%)
 }
 /* gamefield */
+
 .tabContent {
     display: grid;
     row-gap: 3rem;
 }
+.betArea{
+ /* display: grid;    */
+}
+.selectedBet{
+    display: grid;
+    justify-items: center;
+    gap: 3rem;
+}
+.selectedBet p{
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+/* bet button holder 1 */
 .betButtons {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 2rem;
+    column-gap: 3rem;
     justify-content: space-around;
 }
+/* bet button holder 2 */
 .betButton {
     display: grid;
     justify-content: center;
 }
-/* bet buttons */
+/* bet buttons!! */
 .betBtn {
     width: 100px;
     aspect-ratio: 1;
@@ -149,7 +173,10 @@ header h2 {
     background-color: hsl(237, 49%, 15%, 0.3);
     border-radius: 50%;
     border: none;
+    font-size:  2rem;
+    color: hsla(0, 0%, 100%, 1);
 }
+
 /* message and restart area */
 #replay {
     display: grid;
@@ -188,4 +215,27 @@ header h2 {
     letter-spacing: 2px;
     padding: 0.8rem 2.5rem;
     border-radius: 0.5rem;
+}
+
+@media screen  and (min-width:900px) {
+    body {
+        display: grid;
+        place-content: center;
+    }
+    main {
+        width: 800px;
+        justify-items: center;
+    }
+    header {
+        width: 800px;
+        padding: 1rem 3rem;
+    }
+    #betTab {
+        width: 400px;
+
+    }
+    header h2 {
+        font-size: 2.2rem;
+        line-height: 1.8rem;
+    }
 }

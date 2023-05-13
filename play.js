@@ -1,6 +1,7 @@
 // variables
 // collecting scores
 let score = 0;
+
 // bets
 let playerBet;
 let houseBet;
@@ -63,36 +64,52 @@ function playBet(evt, bet) {
   }
   else {
     test = document.getElementById("myBetPlace").appendChild(scissors);
+  };
+  document.getElementById("houseBetPlace").innerHTML = "3";
+  setTimeout(firstDigit, 1000);
+  function firstDigit(){
+    document.getElementById("houseBetPlace").innerHTML = "";
+    document.getElementById("houseBetPlace").innerHTML = "2";
   }
+  setTimeout(secondDigit, 2000);
+  function secondDigit(){
+    document.getElementById("houseBetPlace").innerHTML = "";
+    document.getElementById("houseBetPlace").innerHTML = "1";
+  }
+  setTimeout(() =>
+  {
+    rndNum()
+  }, 3000)
+};
 
-  // placing house bet
-  rndNum();
-  
-  if (houseBet == 0) {
-    housetest = document.getElementById("houseBetPlace").appendChild(paperh);
-  }
-  else if (houseBet == 1) {
-    housetest = document.getElementById("houseBetPlace").appendChild(rockh);
-  }
-  else {
-    housetest = document.getElementById("houseBetPlace").appendChild(scissorsh);
-  }
-  // selecting the winner
-  compaire(playerBet, houseBet);
-
-}
+// setting counter
 
 
 // calculating housebet:
 function rndNum() {
-  myRndNum = Math.floor(Math.random() * 10);
-  if (myRndNum <= 2) {
-    houseBet = myRndNum;
-  }
-  else {
-    rndNum();
-  }
+  myRndNum = Math.floor(Math.random() * 3);
+  houseBet = myRndNum;
+  document.getElementById("houseBetPlace").innerHTML = "";
+
+// placing houseBet:
+if (houseBet == 0) {
+
+  housetest = document.getElementById("houseBetPlace").appendChild(paperh);
 }
+else if (houseBet == 1) {
+
+  housetest = document.getElementById("houseBetPlace").appendChild(rockh);
+}
+else {
+
+  housetest = document.getElementById("houseBetPlace").appendChild(scissorsh);
+};
+ // selecting the winner
+ compaire(playerBet, houseBet);
+}
+
+
+
 
 
 // compairing bets:
